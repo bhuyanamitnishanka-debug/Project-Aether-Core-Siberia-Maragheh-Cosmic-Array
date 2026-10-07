@@ -1,10 +1,10 @@
 import React from 'react';
-import { Volume2, VolumeX, Sparkles, BookOpen, Activity, Compass, Cpu } from 'lucide-react';
+import { Volume2, VolumeX, Sparkles, BookOpen, Activity, Compass, Cpu, Coins, Film } from 'lucide-react';
 import { sound } from '../utils/audioEngine';
 
 interface HeaderProps {
-  activeTab: 'comic' | 'simulator' | 'mission' | 'blueprint';
-  setActiveTab: (tab: 'comic' | 'simulator' | 'mission' | 'blueprint') => void;
+  activeTab: 'comic' | 'simulator' | 'mission' | 'blueprint' | 'marketplace' | 'trailer';
+  setActiveTab: (tab: 'comic' | 'simulator' | 'mission' | 'blueprint' | 'marketplace' | 'trailer') => void;
   isMuted: boolean;
   setIsMuted: (muted: boolean) => void;
 }
@@ -37,11 +37,11 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </button>
 
-        {/* Zone 2: 4 nav links with clean single-line labels */}
-        <nav className="hidden md:flex items-center gap-1 sm:gap-2">
+        {/* Zone 2: Nav links with clean single-line labels */}
+        <nav className="hidden lg:flex items-center gap-1 sm:gap-2">
           <button
             onClick={() => setActiveTab('comic')}
-            className={`flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
               activeTab === 'comic'
                 ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30 shadow-sm shadow-amber-500/10'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={() => setActiveTab('simulator')}
-            className={`flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
               activeTab === 'simulator'
                 ? 'bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 shadow-sm shadow-cyan-500/10'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
@@ -65,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={() => setActiveTab('mission')}
-            className={`flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
               activeTab === 'mission'
                 ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm shadow-emerald-500/10'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={() => setActiveTab('blueprint')}
-            className={`flex items-center gap-2 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
               activeTab === 'blueprint'
                 ? 'bg-purple-500/15 text-purple-400 border border-purple-500/30 shadow-sm shadow-purple-500/10'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
@@ -85,6 +85,30 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Cpu className="w-3.5 h-3.5" />
             <span>Technical Blueprint</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('marketplace')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
+              activeTab === 'marketplace'
+                ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30 shadow-sm shadow-amber-500/10'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
+            }`}
+          >
+            <Coins className="w-3.5 h-3.5 text-amber-400" />
+            <span>Aether Vault</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('trailer')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all whitespace-nowrap ${
+              activeTab === 'trailer'
+                ? 'bg-rose-500/15 text-rose-300 border border-rose-500/30 shadow-sm shadow-rose-500/10'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
+            }`}
+          >
+            <Film className="w-3.5 h-3.5 text-rose-400" />
+            <span>Trailer Script</span>
           </button>
         </nav>
 
@@ -123,32 +147,45 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile navigation row */}
-      <div className="flex md:hidden items-center justify-between gap-1 pt-2.5 mt-2 border-t border-slate-800/60 overflow-x-auto text-[11px]">
+      <div className="flex lg:hidden items-center justify-between gap-1 pt-2.5 mt-2 border-t border-slate-800/60 overflow-x-auto text-[11px]">
         <button
           onClick={() => setActiveTab('comic')}
-          className={`px-2.5 py-1 rounded font-medium ${activeTab === 'comic' ? 'text-amber-400 bg-amber-500/10' : 'text-slate-400'}`}
+          className={`px-2 py-1 rounded font-medium whitespace-nowrap ${activeTab === 'comic' ? 'text-amber-400 bg-amber-500/10' : 'text-slate-400'}`}
         >
           Graphic Novel
         </button>
         <button
           onClick={() => setActiveTab('simulator')}
-          className={`px-2.5 py-1 rounded font-medium ${activeTab === 'simulator' ? 'text-cyan-400 bg-cyan-500/10' : 'text-slate-400'}`}
+          className={`px-2 py-1 rounded font-medium whitespace-nowrap ${activeTab === 'simulator' ? 'text-cyan-400 bg-cyan-500/10' : 'text-slate-400'}`}
         >
           Simulator
         </button>
         <button
           onClick={() => setActiveTab('mission')}
-          className={`px-2.5 py-1 rounded font-medium ${activeTab === 'mission' ? 'text-emerald-400 bg-emerald-500/10' : 'text-slate-400'}`}
+          className={`px-2 py-1 rounded font-medium whitespace-nowrap ${activeTab === 'mission' ? 'text-emerald-400 bg-emerald-500/10' : 'text-slate-400'}`}
         >
           Mission
         </button>
         <button
           onClick={() => setActiveTab('blueprint')}
-          className={`px-2.5 py-1 rounded font-medium ${activeTab === 'blueprint' ? 'text-purple-400 bg-purple-500/10' : 'text-slate-400'}`}
+          className={`px-2 py-1 rounded font-medium whitespace-nowrap ${activeTab === 'blueprint' ? 'text-purple-400 bg-purple-500/10' : 'text-slate-400'}`}
         >
           Blueprint
+        </button>
+        <button
+          onClick={() => setActiveTab('marketplace')}
+          className={`px-2 py-1 rounded font-medium whitespace-nowrap ${activeTab === 'marketplace' ? 'text-amber-300 bg-amber-500/10' : 'text-slate-400'}`}
+        >
+          Vault & Skins
+        </button>
+        <button
+          onClick={() => setActiveTab('trailer')}
+          className={`px-2 py-1 rounded font-medium whitespace-nowrap ${activeTab === 'trailer' ? 'text-rose-300 bg-rose-500/10' : 'text-slate-400'}`}
+        >
+          Trailer
         </button>
       </div>
     </header>
   );
 };
+

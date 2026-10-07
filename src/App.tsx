@@ -8,10 +8,12 @@ import { SexagesimalD3StreamVisualizer } from './components/Simulator/Sexagesima
 import { DarkAstrolabeTelescope } from './components/Simulator/DarkAstrolabeTelescope';
 import { BalanceMissionGame } from './components/Mission/BalanceMissionGame';
 import { EngineeringCodex } from './components/Blueprint/EngineeringCodex';
+import { AetherMarketplace } from './components/Marketplace/AetherMarketplace';
+import { TrailerStoryboard } from './components/Trailer/TrailerStoryboard';
 import { Compass, Sparkles, BookOpen, Activity, Cpu, Radio, Gauge } from 'lucide-react';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'comic' | 'simulator' | 'mission' | 'blueprint'>('comic');
+  const [activeTab, setActiveTab] = useState<'comic' | 'simulator' | 'mission' | 'blueprint' | 'marketplace' | 'trailer'>('comic');
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [simulatorSubView, setSimulatorSubView] = useState<'ALL' | 'D3_STREAM' | 'POWER_GRID' | 'BAIKAL_CORE'>('ALL');
 
@@ -133,6 +135,10 @@ export default function App() {
         {activeTab === 'mission' && <BalanceMissionGame />}
 
         {activeTab === 'blueprint' && <EngineeringCodex />}
+
+        {activeTab === 'marketplace' && <AetherMarketplace />}
+
+        {activeTab === 'trailer' && <TrailerStoryboard />}
       </main>
 
       {/* Editorial Footer */}

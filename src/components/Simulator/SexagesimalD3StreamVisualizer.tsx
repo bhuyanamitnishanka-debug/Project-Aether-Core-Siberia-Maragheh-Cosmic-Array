@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as d3 from 'd3';
+import * as d3Drag from 'd3-drag';
 import { StreamPacketPoint, FiberRoutingNode } from '../../types';
 import { sound } from '../../utils/audioEngine';
 import { SEXAGESIMAL_GLYPHS } from '../../utils/sexagesimal';
@@ -634,7 +635,7 @@ export const SexagesimalD3StreamVisualizer: React.FC = () => {
     // -------------------------------------------------------------
     // D3 DRAG BEHAVIOR: Real-time Node Dragging & Flow Recalculation
     // -------------------------------------------------------------
-    const dragBehavior = d3
+    const dragBehavior = d3Drag
       .drag<SVGGElement, FiberRoutingNode>()
       .subject((_event, d) => ({
         x: scaleX(d.x),
