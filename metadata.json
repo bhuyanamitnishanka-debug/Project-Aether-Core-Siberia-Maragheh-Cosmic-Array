@@ -1,0 +1,6 @@
+{
+  "name": "Project Aether-Core: Siberia-Maragheh Cosmic Array",
+  "description": "Deep-engineering technical blueprint, interactive physics simulator, and Superman-style graphic novel linking the Lake Baikal Neutrino Array with the zero-grid Maragheh Observatory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

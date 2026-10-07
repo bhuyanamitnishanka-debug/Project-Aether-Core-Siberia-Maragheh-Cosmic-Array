@@ -1,0 +1,80 @@
+{
+  "database_name": "AetherCore_User_DB",
+  "schema_version": "2.1.0",
+  "last_backup_epoch": 1791404400,
+  "users": [
+    {
+      "user_id": "usr_77619_zoroaster",
+      "account_meta": {
+        "username": "ArshamaSentinel",
+        "email_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "date_created": "2026-03-15T08:30:00Z",
+        "last_login": "2026-10-07T14:45:12Z",
+        "preferred_language": "od-IN"
+      },
+      "gameplay_progression": {
+        "highest_completed_chapter": 9,
+        "current_checkpoint": "CH9_INTERSTELLAR_CONVERGENCE",
+        "total_playtime_minutes": 512,
+        "achievements_unlocked": [
+          "FIRST_CHERENKOV_FLASH",
+          "ASBADS_STORM_BALANCER",
+          "BAGHDAD_MATRIX_EQUILIBRIUM",
+          "FARAVAHAR_CONVERGENCE",
+          "ABYSSAL_CURRENT_ALIGNMENT",
+          "CRYPT_FIRE_KEEPER_RESONANCE",
+          "INTERSTELLAR_ENDLESS_LIGHT"
+        ]
+      },
+      "character_customization": {
+        "active_skin": "ATAR_EMBER_ARMOR",
+        "unlocked_skins": [
+          "VANILLA_CUNEIFORM",
+          "SIBERIAN_PERMAFROST_SILVER",
+          "ATAR_EMBER_ARMOR"
+        ],
+        "aura_intensity_multiplier": 1.5
+      },
+      "high_score_metrics": {
+        "max_shield_stability_held_pct": 100.0,
+        "max_sustained_asbad_rpm": 9650,
+        "perfect_mod60_checksum_streaks": 18,
+        "fastest_convergence_time_sec": 38.45
+      }
+    },
+    {
+      "user_id": "usr_11042_altay",
+      "account_meta": {
+        "username": "BaikalDriller",
+        "email_hash": "8c7dd922ad47494f31c82c617b7b13b73eb20199f36dfa98ec5188f6236b281f",
+        "date_created": "2026-06-20T11:15:00Z",
+        "last_login": "2026-10-05T09:22:04Z",
+        "preferred_language": "ru-RU"
+      },
+      "gameplay_progression": {
+        "highest_completed_chapter": 6,
+        "current_checkpoint": "CH7_ABYSSAL_CURRENTS_START",
+        "total_playtime_minutes": 260,
+        "achievements_unlocked": [
+          "FIRST_CHERENKOV_FLASH",
+          "ASBADS_STORM_BALANCER",
+          "ALTAY_MINING_OUTPOST_UNLOCKED"
+        ]
+      },
+      "character_customization": {
+        "active_skin": "SIBERIAN_PERMAFROST_SILVER",
+        "unlocked_skins": [
+          "VANILLA_CUNEIFORM",
+          "SIBERIAN_PERMAFROST_SILVER"
+        ],
+        "aura_intensity_multiplier": 1.1
+      },
+      "high_score_metrics": {
+        "max_shield_stability_held_pct": 89.4,
+        "max_sustained_asbad_rpm": 7100,
+        "perfect_mod60_checksum_streaks": 9,
+        "fastest_convergence_time_sec": 74.2
+      }
+    }
+  ]
+}
